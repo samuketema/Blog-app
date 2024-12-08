@@ -17,6 +17,13 @@ class _SignInState extends State<SignIn> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   final formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,7 @@ class _SignInState extends State<SignIn> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Sign In',
+              'Sign In.',
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -57,7 +64,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 20,
             ),
-            AuthGradientButton(),
+            AuthGradientButton(buttonText: 'Sign In',),
             SizedBox(
               height: 20,
             ),
