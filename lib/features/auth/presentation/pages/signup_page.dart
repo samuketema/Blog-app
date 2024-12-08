@@ -18,6 +18,14 @@ class _SignUpState extends State<SignUp> {
   final passwordController = TextEditingController();
   final namelController = TextEditingController();
   final formKey = GlobalKey();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    namelController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +65,7 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               height: 20,
             ),
-            AuthGradientButton(),
+            AuthGradientButton(buttonText: 'Sign Up',),
             SizedBox(
               height: 20,
             ),
