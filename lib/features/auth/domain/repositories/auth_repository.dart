@@ -14,7 +14,6 @@ abstract interface class AuthRepository {
     required String email,
     required String name,
     required String Password
-
   }
    
   );
